@@ -5,6 +5,7 @@ import datetime
 from flask import Flask, render_template, request, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 
+# Links
 # https://www.geeksforgeeks.org/flask-rendering-templates <- FLask tutorial
 # https://pythonbasics.org/flask-sqlalchemy/#CRUD <- Flask SQLAlchemy tutorial
 
