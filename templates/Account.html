@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}{{company_name}} Account Management{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <img src="#" alt="Profile Image" class="profile-img-account">
+    <br><br><br><br>
+    <a href="#">
+        <h3>Upload New Image</h3>
+    </a>
+
+    <br><br>
+
+    <div class="dropdown">
+        <select name="dropdown1" id="dropdown1">
+            <option value="">Select one</option>
+            <option value="link1">Link 1</option>
+            <option value="link2">Link 2</option>
+            <option value="link3">Link 3</option>
+        </select>
+    </div>
+    <div hidden>
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+    <br><br>
+
+    <input type="button" value="Submit" class="button" id="dashboardbutton">
+
+</div>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}{{company_name}} Dashboard{% endblock %}
+
+{% block content %}
+<!--Form-->
+<div class="container-fluid min-vh-100 d-flex flex-column">
+    <div class="row mt-3">
+        <div class="col-12 border border-info">
+            <form action="/AddRoute" method="POST">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <label for="origin">Origin</label><br>
+                        <input type="text" name="origin" placeholder="Origin" class="form-control"><br>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <label for="radius-o">Mile Radius</label><br>
+                        <input type="text" name="radius_o" placeholder="Radius" class="form-control"><br>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <label for="dest">Destination</label><br>
+                        <input type="text" name="destination" placeholder="Destination" class="form-control"><br>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <label for="radius-d">Mile Radius</label><br>
+                        <input type="text" name="radius_d" placeholder="Radius" class="form-control"><br>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <label for="startdate">Start Date</label><br>
+                        <input type="text" name="startdate" placeholder="Start Date" class="form-control"><br>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <label for="enddate">End Date</label><br>
+                        <input type="text" name="enddate" placeholder="End Date" class="form-control"><br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <label for="maxweight">Maximum Weight</label><br>
+                        <input type="text" name="maxweight" placeholder="Maximum Weight" class="form-control"><br>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <label for="trailertype">Trailer Type</label><br>
+                        <input type="text" name="ttype" placeholder="Type" class="form-control"><br>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <label for="trailerlength">Trailer Length</label><br>
+                        <input type="text" name="tlength" placeholder="Length" class="form-control"><br>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 align-self-center">
+                        <input type="submit" value="Submit" class="button" id="dashboardbutton">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row flex-fill flex-grow-1">
+        <table class="table table-striped" id="tableHistory">
+            <caption class="caption-top h4">Load History</caption>
+            <thead>
+                <tr>
+                    <th width="15%">Origin</td>
+                    <th width="5%">Radius</td>
+                    <th width="15%">Destination</td>
+                    <th width="5%">Radius</td>
+                    <th width="10%">Start</td>
+                    <th width="10%">End</td>
+                    <th width="10%">Max Weight</td>
+                    <th width="20%">Type</td>
+                    <th width="10%">Length</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in history: %}
+                <tr>
+                    <td>{{record.origin}}</td>
+                    <td>{{record.destination}}</td>
+                    <td>{{record.radius_o}}</td>
+                    <td>{{record.radius_d}}</td>
+                    <td>{{record.startdate}}</td>
+                    <td>{{record.enddate}}</td>
+                    <td>{{record.maxweight}}</td>
+                    <td>{{record.trailertype}}</td>
+                    <td>{{record.trailerlength}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

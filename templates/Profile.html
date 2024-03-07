@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}{{company_name}} User Profile{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="mb-3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlkgYT7Fl-LVTTe5_Ja1oT2iHflVDh5ccq1g&usqp=CAU"
+            alt="Profile Image">
+    </div>
+    <form>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload New Image</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Select One</option>
+                <option value="Link1">Link One</option>
+                <option value="Link2">Link Two</option>
+                <option value="Link3">Link Three</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input type="button" value="Submit" class="button" id="dashboardbutton">
+        </div>
+    </form>
+
+</div>
+{% endblock %}
